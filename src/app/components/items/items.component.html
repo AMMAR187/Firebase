@@ -1,3 +1,9 @@
-<p>
-  items works!
-</p>
+<div *ngIf="items?.length > 0; else noItem">
+  <ul class="collection" *ngFor="let item of items">
+    <li class="collection-item" (dbclick)="deleteItem($event,item)"><strong>{{item.title}}</strong>
+      {{item.description}}</li>
+  </ul>
+</div>
+<ng-template #noItem>
+  <p>there's no items </p>
+</ng-template>
