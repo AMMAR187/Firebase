@@ -1,7 +1,9 @@
 <div *ngIf="items?.length > 0; else noItem">
   <ul class="collection" *ngFor="let item of items">
-    <li class="collection-item" (dbclick)="deleteItem($event,item)"><strong>{{item.title}}</strong>
-      {{item.description}}</li>
+    <li class="collection-item" (dblclick)="deleteItem($event,item)"><strong>{{item.title}}:</strong>
+      {{item.description}} <a href="#" class="secondary-content">
+        <i (click)="editItem($event,item)" class="fa fa-pencil"></i>
+      </a></li>
   </ul>
 </div>
 <ng-template #noItem>

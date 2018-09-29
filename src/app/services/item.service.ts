@@ -30,7 +30,7 @@ export class ItemService {
     this.itemCollection.add(item);
   }
   deleteItem(item: Item) {
-    this.itemDoc = this.afs.doc(`titles/${item.id}`)
+    this.itemDoc = this.afs.doc(`items/${item.id}`);
     this.itemDoc.delete();
   }
 }
