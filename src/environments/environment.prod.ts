@@ -7,4 +7,5 @@ export const environment = {
     projectId: "fs1dev-570d8",
     storageBucket: "fs1dev-570d8.appspot.com",
     messagingSenderId: "858884664384"
-  };
+  }
+};
