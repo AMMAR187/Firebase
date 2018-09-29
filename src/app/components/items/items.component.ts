@@ -18,12 +18,21 @@ export class ItemsComponent implements OnInit {
       this.items = item;
     });
   }
-  deleteItem(event, item) {
+  deleteItem(event, item: Item) {
+    this.clear();
     this.itemService.deleteItem(item);
   }
-  editItem(event, item) {
-    this.editState = false;
+  updateItem(item: Item) {
+    this.itemService.updateItem(item);
+    this.clear();
+  }
+  editItem(event, item: Item) {
+    this.editState = true;
     this.itemToEdit = item;
+  }
+  clear() {
+    this.editState = false;
+    this.itemToEdit = null;
   }
 
 }
